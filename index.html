@@ -81,7 +81,7 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;overflow-x:hidden}
+html{scroll-behavior:smooth}
 body{
   font-family:'Work Sans',system-ui,sans-serif;
   background:var(--bg);color:var(--text);
@@ -120,9 +120,7 @@ header.nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(1.4) blur(1
 header .brand img{height:50px;width:auto;display:block}
 footer .brand img{height:50px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:26px}
-.nav-mobile-title{display:none}
-.nav-mobile-footer{display:none}
-.nav-links a.link .mobile-only-ico{display:none}
+.nav-mobile-title, .nav-mobile-footer, .nav-links a.link .mobile-only-ico {display:none}
 .nav-links a.link{font-weight:600;font-size:.95rem;color:#5b574f;transition:color .2s}
 .nav-links a.link:hover{color:#C8102E}
 .nav-actions{display:flex;align-items:center;gap:12px}
@@ -356,42 +354,32 @@ footer a.fl .ico{color:var(--accent-soft)}
 @media(max-width:680px){
   section{padding:60px 0}
   
-  /* Burger Animation to 'X' */
-  .burger{display:flex;position:relative;z-index:100;border-color:var(--border);transition:background .2s}
-  .burger span{transition:transform .3s ease, opacity .2s, background-color .3s}
-  .burger.open span:nth-child(1){transform:translateY(6px) rotate(45deg);background-color:#FFF}
-  .burger.open span:nth-child(2){opacity:0}
-  .burger.open span:nth-child(3){transform:translateY(-6px) rotate(-45deg);background-color:#FFF}
+  /* Burger Icon Reset */
+  .burger{display:flex;border-color:var(--border)}
+  .burger span{background-color:#1A1A1A}
   
-  /* Overlay */
-  .nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(3px);z-index:80;opacity:0;visibility:hidden;transition:opacity .3s ease, visibility .3s}
-  .nav-overlay.open{opacity:1;visibility:visible}
-  
-  /* Premium Drawer Mobile Nav - hidden by default via JS on load */
-  @keyframes slideInDrawer{from{transform:translateX(100%)}to{transform:translateX(0)}}
-  @keyframes slideOutDrawer{from{transform:translateX(0)}to{transform:translateX(100%)}}
+  /* Dropdown Mobile Nav styling matching the screenshot */
   .nav-links{
-    display:none;flex-direction:column;
-    position:fixed;top:0;right:0;bottom:0;width:300px;
-    background:rgba(20,18,16,0.97);backdrop-filter:blur(20px);
-    border-left:1px solid rgba(255,255,255,0.08);padding:30px 24px;gap:0;
-    align-items:stretch;justify-content:flex-start;
-    box-shadow:-10px 0 30px rgba(0,0,0,0.5);z-index:90;overflow-y:auto;
-    color:#FFF;
+    position:absolute;top:100%;left:0;right:0;
+    flex-direction:column;background:#FFFFFF;
+    border-bottom:1px solid #e7e2d9;padding:18px 20px;gap:14px;
+    align-items:flex-start;box-shadow:var(--shadow);
+    transform:translateY(-130%);transition:transform .3s ease-in-out;
+    z-index:90;display:flex !important;
   }
-  .nav-links.slide-in{animation:slideInDrawer .35s cubic-bezier(0.16,1,0.3,1) forwards}
+  .nav-links.open{transform:translateY(0)}
   
-  .nav-mobile-title{display:flex;font-family:'Oswald',sans-serif;font-size:1.1rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent-soft);margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.08);align-items:center;gap:8px}
-  .nav-links a.link{font-size:1.1rem;font-weight:500;color:#e7e2d9;padding:14px 0;width:100%;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;gap:12px;transition:color .2s,padding-left .2s}
-  .nav-links a.link:hover,.nav-links a.link:active{color:var(--accent);padding-left:6px}
-  .nav-links a.link .mobile-only-ico{display:inline-block;color:var(--accent-soft);opacity:0.8}
+  .nav-links a.link{
+    font-size:1.05rem;font-weight:600;color:#5b574f;
+    padding:8px 0;width:100%;
+    border-bottom:none;display:block !important;
+  }
+  .nav-links a.link:hover, .nav-links a.link:active{
+    color:#C8102E;
+  }
   
-  .nav-mobile-footer{display:flex;margin-top:auto;padding-top:30px;flex-direction:column;gap:16px}
-  .nav-mobile-footer p{font-size:.8rem;color:#b3aa9b;text-transform:uppercase;letter-spacing:.5px}
-  .nav-mobile-cta{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:#1A1A1A;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;font-size:.9rem;padding:12px;border-radius:10px;text-align:center;box-shadow:0 4px 12px rgba(238,155,0,.25)}
-  .nav-mobile-socials{display:flex;gap:10px}
-  .nav-mobile-socials a{width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:grid;place-items:center;color:#FFF;transition:.2s}
-  .nav-mobile-socials a:hover{background:var(--primary)}
+  /* Hide unused elements */
+  .nav-mobile-title, .nav-mobile-footer, .nav-overlay{display:none !important}
   
   .nav-desktop-cta{display:none}
   .sedes-grid,.menu-grid,.promos-grid,.reviews-grid{grid-template-columns:1fr}
@@ -406,62 +394,19 @@ footer a.fl .ico{color:var(--accent-soft)}
 <body>
 
 <!-- NAV -->
-<div class="nav-overlay" id="navOverlay"></div>
 <header class="nav">
   <div class="wrap nav-inner">
     <a href="#hero" class="brand" aria-label="Pizzería 007 inicio">
       <img src="./assets/logo-007.png" alt="Pizzería 007" style="height:50px; width:auto">
     </a>
     <nav class="nav-links" id="navLinks">
-      <div class="nav-mobile-title">
-        <svg class="ico ico-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
-        Navegación
-      </div>
-      
-      <a class="link" href="#sedes">
-        <svg class="ico ico-sm mobile-only-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        Sedes
-      </a>
-      <a class="link" href="#menu">
-        <svg class="ico ico-sm mobile-only-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        Menú
-      </a>
-      <a class="link" href="#galeria">
-        <svg class="ico ico-sm mobile-only-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        Galería
-      </a>
-      <a class="link" href="#nosotros">
-        <svg class="ico ico-sm mobile-only-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        Nosotros
-      </a>
-      <a class="link" href="#promos">
-        <svg class="ico ico-sm mobile-only-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-        Promos
-      </a>
-      <a class="link" href="#testimonios">
-        <svg class="ico ico-sm mobile-only-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        Testimonios
-      </a>
-      <a class="link" href="#contacto">
-        <svg class="ico ico-sm mobile-only-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        Contacto
-      </a>
-      
-      <div class="nav-mobile-footer">
-        <p>¿Listo para ordenar?</p>
-        <a href="#contacto" class="nav-mobile-cta">
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          Pedir ahora
-        </a>
-        <div class="nav-mobile-socials">
-          <a href="https://instagram.com/pizzeria007" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg class="ico ico-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          </a>
-          <a href="https://wa.me/584144369559" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg class="ico ico-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          </a>
-        </div>
-      </div>
+      <a class="link" href="#sedes">Sedes</a>
+      <a class="link" href="#menu">Menú</a>
+      <a class="link" href="#galeria">Galería</a>
+      <a class="link" href="#nosotros">Nosotros</a>
+      <a class="link" href="#promos">Promos</a>
+      <a class="link" href="#testimonios">Testimonios</a>
+      <a class="link" href="#contacto">Contacto</a>
     </nav>
     <div class="nav-actions">
       <a href="#contacto" class="btn btn-primary nav-desktop-cta">Pedir ahora</a>
@@ -1025,38 +970,18 @@ footer a.fl .ico{color:var(--accent-soft)}
 <script>
 
 
-// Mobile nav - JS controls display directly to avoid CSS specificity issues
+// Mobile nav
 var burger = document.getElementById('burger');
 var navLinks = document.getElementById('navLinks');
-var navOverlay = document.getElementById('navOverlay');
-var menuIsOpen = false;
-
-function openMenu() {
-  menuIsOpen = true;
-  navLinks.style.display = 'flex';
-  navLinks.classList.add('slide-in');
-  burger.classList.add('open');
-  navOverlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeMenu() {
-  menuIsOpen = false;
-  navLinks.style.display = 'none';
-  navLinks.classList.remove('slide-in');
-  burger.classList.remove('open');
-  navOverlay.classList.remove('open');
-  document.body.style.overflow = '';
-}
 
 burger.addEventListener('click', function() {
-  if (menuIsOpen) closeMenu(); else openMenu();
+  navLinks.classList.toggle('open');
 });
-navOverlay.addEventListener('click', closeMenu);
 
-// Close menu when clicking any link
-navLinks.querySelectorAll('a.link').forEach(function(a) {
-  a.addEventListener('click', closeMenu);
+navLinks.querySelectorAll('a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    navLinks.classList.remove('open');
+  });
 });
 
 // Google Reviews Carousel
