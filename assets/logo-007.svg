@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Pizzería 007">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F7D560"/>
+      <stop offset="1" stop-color="#E0A92B"/>
+    </linearGradient>
+  </defs>
+  <!-- Roundel -->
+  <circle cx="100" cy="100" r="96" fill="#1A1A1A"/>
+  <circle cx="100" cy="100" r="96" fill="none" stroke="url(#gold)" stroke-width="5"/>
+  <circle cx="100" cy="100" r="84" fill="none" stroke="#C8102E" stroke-width="2.5"/>
+  <!-- Tricolor italiano top arc text baseline -->
+  <path id="topArc" d="M 32 100 A 68 68 0 0 1 168 100" fill="none"/>
+  <text font-family="'Oswald','Arial Narrow',sans-serif" font-weight="600" font-size="17"
+        letter-spacing="3" fill="url(#gold)">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">PIZZERÍA</textPath>
+  </text>
+  <!-- 007 wordmark -->
+  <text x="100" y="118" text-anchor="middle"
+        font-family="'Oswald','Arial Narrow',sans-serif" font-weight="700"
+        font-size="62" fill="#FFFFFF" letter-spacing="2">007</text>
+  <!-- Slice accent -->
+  <g transform="translate(100 150)">
+    <path d="M -16 0 L 16 0 L 0 22 Z" fill="url(#gold)"/>
+    <path d="M -16 0 L 16 0 L 13 4 L -13 4 Z" fill="#C8102E"/>
+    <circle cx="-6" cy="9" r="2.2" fill="#C8102E"/>
+    <circle cx="5" cy="8" r="2.2" fill="#C8102E"/>
+    <circle cx="0" cy="14" r="2" fill="#C8102E"/>
+  </g>
+  <!-- Italian flag dot -->
+  <g transform="translate(38 62)">
+    <rect x="0" y="0" width="6" height="14" fill="#0E8A3E"/>
+    <rect x="6" y="0" width="6" height="14" fill="#FFFFFF"/>
+    <rect x="12" y="0" width="6" height="14" fill="#C8102E"/>
+  </g>
+  <g transform="translate(144 62)">
+    <rect x="0" y="0" width="6" height="14" fill="#FCD116"/>
+    <rect x="6" y="0" width="6" height="14" fill="#003DA5"/>
+    <rect x="12" y="0" width="6" height="14" fill="#C8102E"/>
+  </g>
+</svg>
