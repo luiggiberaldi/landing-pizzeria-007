@@ -367,30 +367,31 @@ footer a.fl .ico{color:var(--accent-soft)}
   .nav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(3px);z-index:80;opacity:0;visibility:hidden;transition:opacity .3s ease, visibility .3s}
   .nav-overlay.open{opacity:1;visibility:visible}
   
-  /* Premium Drawer Mobile Nav */
+  /* Premium Drawer Mobile Nav - hidden by default via JS on load */
+  @keyframes slideInDrawer{from{transform:translateX(100%)}to{transform:translateX(0)}}
+  @keyframes slideOutDrawer{from{transform:translateX(0)}to{transform:translateX(100%)}}
   .nav-links{
-    display:flex;flex-direction:column;
+    display:none;flex-direction:column;
     position:fixed;top:0;right:0;bottom:0;width:300px;
     background:rgba(20,18,16,0.97);backdrop-filter:blur(20px);
     border-left:1px solid rgba(255,255,255,0.08);padding:30px 24px;gap:0;
     align-items:stretch;justify-content:flex-start;
-    transform:translateX(110%);transition:transform .35s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow:-10px 0 30px rgba(0,0,0,0.5);z-index:90;overflow-y:auto;
-    color:#FFF;pointer-events:none;
+    color:#FFF;
   }
-  .nav-links.open{transform:translateX(0);pointer-events:auto}
+  .nav-links.slide-in{animation:slideInDrawer .35s cubic-bezier(0.16,1,0.3,1) forwards}
   
   .nav-mobile-title{display:flex;font-family:'Oswald',sans-serif;font-size:1.1rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent-soft);margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,0.08);align-items:center;gap:8px}
-  .nav-links a.link{font-size:1.1rem;font-weight:500;color:#e7e2d9;padding:14px 0;width:100%;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;gap:12px;transition:color .2s, padding-left .2s}
-  .nav-links a.link:hover, .nav-links a.link:active{color:var(--accent);padding-left:6px}
+  .nav-links a.link{font-size:1.1rem;font-weight:500;color:#e7e2d9;padding:14px 0;width:100%;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;gap:12px;transition:color .2s,padding-left .2s}
+  .nav-links a.link:hover,.nav-links a.link:active{color:var(--accent);padding-left:6px}
   .nav-links a.link .mobile-only-ico{display:inline-block;color:var(--accent-soft);opacity:0.8}
   
   .nav-mobile-footer{display:flex;margin-top:auto;padding-top:30px;flex-direction:column;gap:16px}
   .nav-mobile-footer p{font-size:.8rem;color:#b3aa9b;text-transform:uppercase;letter-spacing:.5px}
   .nav-mobile-cta{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:#1A1A1A;font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;font-size:.9rem;padding:12px;border-radius:10px;text-align:center;box-shadow:0 4px 12px rgba(238,155,0,.25)}
   .nav-mobile-socials{display:flex;gap:10px}
-  .nav-mobile-socials a{width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:grid;place-items:center;color:#FFF;font-size:.9rem;transition:.2s}
-  .nav-mobile-socials a:hover{background:var(--primary);color:#FFF}
+  .nav-mobile-socials a{width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);display:grid;place-items:center;color:#FFF;transition:.2s}
+  .nav-mobile-socials a:hover{background:var(--primary)}
   
   .nav-desktop-cta{display:none}
   .sedes-grid,.menu-grid,.promos-grid,.reviews-grid{grid-template-columns:1fr}
@@ -1024,26 +1025,33 @@ footer a.fl .ico{color:var(--accent-soft)}
 <script>
 
 
-// Mobile nav
+// Mobile nav - JS controls display directly to avoid CSS specificity issues
 var burger = document.getElementById('burger');
 var navLinks = document.getElementById('navLinks');
 var navOverlay = document.getElementById('navOverlay');
+var menuIsOpen = false;
 
-function toggleMenu() {
-  var isOpen = navLinks.classList.toggle('open');
-  burger.classList.toggle('open', isOpen);
-  navOverlay.classList.toggle('open', isOpen);
-  document.body.style.overflow = isOpen ? 'hidden' : ''; // Prevent scroll when open
+function openMenu() {
+  menuIsOpen = true;
+  navLinks.style.display = 'flex';
+  navLinks.classList.add('slide-in');
+  burger.classList.add('open');
+  navOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeMenu() {
-  navLinks.classList.remove('open');
+  menuIsOpen = false;
+  navLinks.style.display = 'none';
+  navLinks.classList.remove('slide-in');
   burger.classList.remove('open');
   navOverlay.classList.remove('open');
   document.body.style.overflow = '';
 }
 
-burger.addEventListener('click', toggleMenu);
+burger.addEventListener('click', function() {
+  if (menuIsOpen) closeMenu(); else openMenu();
+});
 navOverlay.addEventListener('click', closeMenu);
 
 // Close menu when clicking any link
