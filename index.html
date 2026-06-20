@@ -238,7 +238,10 @@ footer .brand img{height:50px;width:auto;display:block}
 .summary-stars{display:flex;flex-direction:column;gap:5px}
 .summary-rating{font-family:'Oswald',sans-serif;font-size:3.5rem;font-weight:700;line-height:1;color:var(--text)}
 .summary-count{font-size:.95rem;color:var(--text-soft)}
-.summary-stars-row{display:flex;gap:3px;color:var(--accent)}
+.summary-stars-row{display:flex;gap:4px}
+.summary-stars-row svg{width:22px;height:22px;stroke:none;flex:none}
+.summary-stars-row svg.filled{fill:var(--accent)}
+.summary-stars-row svg.half{fill:url(#halfGrad)}
 .summary-action{margin-left:auto}
 @media(max-width:768px){
   .reviews-summary{flex-direction:column;align-items:center;text-align:center;gap:20px}
@@ -255,7 +258,10 @@ footer .brand img{height:50px;width:auto;display:block}
 .review-meta{display:flex;flex-direction:column}
 .review-name{font-weight:600;font-size:1rem;color:var(--text)}
 .review-sub{font-size:.8rem;color:var(--text-soft)}
-.review-stars{display:flex;gap:3px;color:var(--accent)}
+.review-stars{display:flex;gap:3px;margin:2px 0}
+.review-stars svg{width:18px;height:18px;stroke:none;flex:none}
+.review-stars svg.filled{fill:var(--accent)}
+.review-stars svg.empty{fill:#e0e0e0}
 .review-text{font-size:.95rem;color:var(--text-soft);line-height:1.6;flex:1}
 .review-google-logo{position:absolute;top:24px;right:24px;width:18px;height:18px;opacity:0.6}
 .btn-google{background:#fff;border:1px solid #dadce0;color:#3c4043;font-family:'Work Sans',sans-serif;font-weight:600;text-transform:none;letter-spacing:normal;box-shadow:var(--shadow-sm)}
@@ -605,18 +611,18 @@ footer a.fl .ico{color:var(--accent-soft)}
       <div class="summary-stars">
         <span class="summary-rating">4.5</span>
         <div class="summary-stars-row">
-          <svg class="ico ico-md" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-md" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-md" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-md" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-md" viewBox="0 0 24 24" fill="currentColor">
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="half" viewBox="0 0 24 24">
             <defs>
               <linearGradient id="halfGrad">
                 <stop offset="50%" stop-color="var(--accent)"/>
                 <stop offset="50%" stop-color="#dadce0"/>
               </linearGradient>
             </defs>
-            <polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6" fill="url(#halfGrad)"/>
+            <polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/>
           </svg>
         </div>
         <span class="summary-count">5.380+ reseñas en Google</span>
@@ -650,11 +656,11 @@ footer a.fl .ico{color:var(--accent-soft)}
           </div>
         </div>
         <div class="review-stars">
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="#dadce0"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="empty" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
         </div>
         <p class="review-text">"Tiene varios ambientes, la atención es buena y rápida. Los precios son bajos, bastante asequibles. La pasta carbonara regular, normal, para el precio está bien. El lugar tiene muy buena vibra para venir a cenar."</p>
       </div>
@@ -674,11 +680,11 @@ footer a.fl .ico{color:var(--accent-soft)}
           </div>
         </div>
         <div class="review-stars">
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
         </div>
         <p class="review-text">"La mejor pizza a leña de Valencia. La 4 Estaciones con borde de queso es espectacular, súper recomendada. El ambiente de los salones es muy agradable y la atención del personal es muy atenta."</p>
       </div>
@@ -698,11 +704,11 @@ footer a.fl .ico{color:var(--accent-soft)}
           </div>
         </div>
         <div class="review-stars">
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
-          <svg class="ico ico-sm" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
+          <svg class="filled" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 17 14.1 18.2 21 12 17.6 5.8 21 7 14.1 2 9.3 8.9 8.6"/></svg>
         </div>
         <p class="review-text">"Tienen excelentes precios y las pizzas familiares son enormes y con bastantes ingredientes. El servicio de delivery es muy rápido y el pasticho italiano es delicioso. Súper recomendados."</p>
       </div>
