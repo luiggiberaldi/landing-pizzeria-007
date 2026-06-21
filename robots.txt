@@ -1,0 +1,14 @@
+# robots.txt — Pizzería 007
+User-agent: *
+Allow: /
+Disallow: /_original_assets_backup/
+Disallow: /node_modules/
+
+# Sitemap
+Sitemap: https://pizzeria007.com/sitemap.xml
+
+# No indexar archivos de desarrollo
+Disallow: /*.original*.html$
+Disallow: /download_photos.js
+Disallow: /package.json
+Disallow: /package-lock.json

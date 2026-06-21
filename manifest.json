@@ -1,0 +1,40 @@
+{
+  "name": "Pizzería 007 — Pizza artesanal a leña en Valencia",
+  "short_name": "Pizzería 007",
+  "description": "Las mejores pizzas de Valencia, Venezuela. Más de 17 variedades hechas a leña. 2 sedes: Centro y Av. Monseñor Adams. Desde $2.99.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAFAF8",
+  "theme_color": "#C8102E",
+  "lang": "es-VE",
+  "dir": "ltr",
+  "categories": ["food", "restaurant", "lifestyle"],
+  "icons": [
+    { "src": "./assets/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./assets/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./assets/icon-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "./assets/icon-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ver menú",
+      "short_name": "Menú",
+      "url": "./index.html#menu",
+      "icons": [{ "src": "./assets/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Pedir por WhatsApp",
+      "short_name": "Pedir",
+      "url": "./index.html#contacto",
+      "icons": [{ "src": "./assets/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Nuestras sedes",
+      "short_name": "Sedes",
+      "url": "./index.html#sedes",
+      "icons": [{ "src": "./assets/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://pizzeria007.com/</loc>
+    <lastmod>2026-06-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://pizzeria007.com/assets/instagram/foto-11.jpg</image:loc>
+      <image:title>Pizza a leña Pizzería 007</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pizzeria007.com/assets/instagram/foto-03.jpg</image:loc>
+      <image:title>Pizza 4 Estaciones con borde relleno de mozzarella</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pizzeria007.com/assets/instagram/foto-06.jpg</image:loc>
+      <image:title>Pizza jamón y maíz Pizzería 007</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pizzeria007.com/assets/instagram/foto-12.jpg</image:loc>
+      <image:title>Pasticho italiano gratinado</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://pizzeria007.com/assets/logo-007.png</image:loc>
+      <image:title>Logo Pizzería 007</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://pizzeria007.com/#menu</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://pizzeria007.com/#sedes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pizzeria007.com/#promos</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pizzeria007.com/#nosotros</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://pizzeria007.com/#contacto</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
